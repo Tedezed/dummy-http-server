@@ -1,5 +1,5 @@
 #!/bin/bash
-# gcloud_bq_size
+# Generator Docker image Dummy HTTP Server
 # By Tedezed
 
 list_ports="80 443 8000 8443 8080 8888 3000 5000 6000"
