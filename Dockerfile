@@ -20,4 +20,4 @@ COPY --from=builder /go/dummy-http-server /dummy-http-server
 COPY entrypoint.sh .
 RUN chmod +x dummy-http-server entrypoint.sh
 USER 1000
-CMD ["./dummy-http-server"]
+ENTRYPOINT ["./entrypoint.sh"]
