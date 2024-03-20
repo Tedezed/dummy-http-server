@@ -17,6 +17,7 @@ RUN groupadd -f -g ${GID} ${UNAME} \
 # RUN addgroup -g ${GID} ${UNAME} \
 #     && adduser -G ${UNAME} -u ${UID} ${UNAME} -D
 COPY --from=builder /go/dummy-http-server /dummy-http-server
-RUN chmod +x dummy-http-server
+COPY entrypoint.sh .
+RUN chmod +x dummy-http-server entrypoint.sh
 USER 1000
 CMD ["./dummy-http-server"]
