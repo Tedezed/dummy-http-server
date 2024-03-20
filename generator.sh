@@ -2,7 +2,7 @@
 # gcloud_bq_size
 # By Tedezed
 
-list_ports="80 443 8443 8080 8888 3000 5000 6000"
+list_ports="80 443 8000 8443 8080 8888 3000 5000 6000"
 
 for p in $(echo ${list_ports})
 do

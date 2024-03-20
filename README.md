@@ -10,6 +10,7 @@ docker run -p 8080:8080 tedezed/dummy-http-server:3000
 Port list:
 - 80
 - 443
+- 8000
 - 8443
 - 8080
 - 8888
