@@ -48,7 +48,7 @@ resource "google_cloud_run_v2_service" "my_awesome_api" {
   }
 
   lifecycle {
-    # ⚠️ Ignore the image for the first deploy
+    # ⚠️ Ignore the image for the following CI deployments
     ignore_changes = [
       template[0].containers[0].image
     ]
