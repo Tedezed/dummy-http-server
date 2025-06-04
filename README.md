@@ -48,6 +48,7 @@ resource "google_cloud_run_v2_service" "my_awesome_api" {
   }
 
   lifecycle {
+    # ⚠️ Ignore the image for the first deploy
     ignore_changes = [
       template[0].containers[0].image
     ]
@@ -68,6 +69,8 @@ Now you can update the API image with your CI:
         with:
           service: dummy-http-server
           region: us-central1
-          image: ---> YOUR-FINAL-IMAGE <---
+          image: ⚠️ ---> YOUR-FINAL-IMAGE <--- ⚠️
           allow-unauthenticated: true
 ```
+
+Once deployed, you could modify the Terraform state to take the `latest` image from your CI instead of the dummy image.
